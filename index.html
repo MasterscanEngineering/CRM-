@@ -885,6 +885,9 @@
       right: 30px;
       height: 90px;
       z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .report-footer-img {
@@ -894,13 +897,17 @@
       right: 30px;
       height: 60px;
       z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .report-header-img img,
     .report-footer-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
       display: block;
     }
 
@@ -2137,7 +2144,7 @@
                 <!-- PREVIEW PAGE 1 -->
                 <div class="a4-page" id="live-page-1" style="transform: scale(1); margin-bottom: 0;">
                   <!-- Header and Footer backgrounds loaded dynamically -->
-                  <div class="report-header-img dynamic-header-bg"><img src="header.jpg" style="width: 100%; height: 100%; object-fit: contain; display: block;"></div>
+                  <div class="report-header-img dynamic-header-bg"><img src="header.jpg" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;"></div>
                   <div class="report-watermark">MASTERSCAN ENGINEERING</div>
                   <div class="report-content">
                     <div class="preview-ref-line">
@@ -2250,12 +2257,12 @@
                       </table>
                     </div>
                   </div>
-                  <div class="report-footer-img dynamic-footer-bg"><img src="footer.jpg" style="width: 100%; height: 100%; object-fit: contain; display: block;"></div>
+                  <div class="report-footer-img dynamic-footer-bg"><img src="footer.jpg" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;"></div>
                 </div>
 
                 <!-- PREVIEW PAGE 2 -->
                 <div class="a4-page" id="live-page-2" style="transform: scale(1); margin-bottom: 0;">
-                  <div class="report-header-img dynamic-header-bg"><img src="header.jpg" style="width: 100%; height: 100%; object-fit: contain; display: block;"></div>
+                  <div class="report-header-img dynamic-header-bg"><img src="header.jpg" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;"></div>
                   <div class="report-watermark">MASTERSCAN ENGINEERING</div>
                   <div class="report-content">
                     <div class="preview-ref-line">
@@ -2335,7 +2342,7 @@
                       </tr>
                     </table>
                   </div>
-                  <div class="report-footer-img dynamic-footer-bg"><img src="footer.jpg" style="width: 100%; height: 100%; object-fit: contain; display: block;"></div>
+                  <div class="report-footer-img dynamic-footer-bg"><img src="footer.jpg" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;"></div>
                 </div>
 
               </div>
@@ -2657,7 +2664,7 @@
         var src = assetHeaderBase64 ? assetHeaderBase64 : 'header.jpg';
         var img = div.querySelector('img');
         if (!img) {
-          div.innerHTML = '<img src="' + src + '" style="width: 100%; height: 100%; object-fit: contain; display: block;">';
+          div.innerHTML = '<img src="' + src + '" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;">';
         } else {
           img.src = src;
         }
@@ -2669,7 +2676,7 @@
         var src = assetFooterBase64 ? assetFooterBase64 : 'footer.jpg';
         var img = div.querySelector('img');
         if (!img) {
-          div.innerHTML = '<img src="' + src + '" style="width: 100%; height: 100%; object-fit: contain; display: block;">';
+          div.innerHTML = '<img src="' + src + '" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block;">';
         } else {
           img.src = src;
         }
@@ -4206,16 +4213,16 @@
 
       var headerImgHtml = "";
       if (assetHeaderBase64) {
-        headerImgHtml = `<div style="text-align: center; margin-bottom: 20px;"><img src="${assetHeaderBase64}" style="width: 100%; max-height: 90px; object-fit: contain;"></div>`;
+        headerImgHtml = `<div style="text-align: center; margin-bottom: 20px;"><img src="${assetHeaderBase64}" style="max-width: 100%; max-height: 90px; height: auto;"></div>`;
       } else {
-        headerImgHtml = `<div style="text-align: center; margin-bottom: 20px;"><img src="header.jpg" style="width: 100%; max-height: 90px; object-fit: contain;"></div>`;
+        headerImgHtml = `<div style="text-align: center; margin-bottom: 20px;"><img src="header.jpg" style="max-width: 100%; max-height: 90px; height: auto;"></div>`;
       }
 
       var footerImgHtml = "";
       if (assetFooterBase64) {
-        footerImgHtml = `<div style="text-align: center; margin-top: 20px;"><img src="${assetFooterBase64}" style="width: 100%; max-height: 60px; object-fit: contain;"></div>`;
+        footerImgHtml = `<div style="text-align: center; margin-top: 20px;"><img src="${assetFooterBase64}" style="max-width: 100%; max-height: 60px; height: auto;"></div>`;
       } else {
-        footerImgHtml = `<div style="text-align: center; margin-top: 20px;"><img src="footer.jpg" style="width: 100%; max-height: 60px; object-fit: contain;"></div>`;
+        footerImgHtml = `<div style="text-align: center; margin-top: 20px;"><img src="footer.jpg" style="max-width: 100%; max-height: 60px; height: auto;"></div>`;
       }
 
       var docHtml = `
